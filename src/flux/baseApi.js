@@ -5,6 +5,7 @@ import axios from 'axios';
 import SessionHelper from 'helpers/session';
 
 import { fromJS } from 'immutable';
+import ReduxHack from './ReduxHack';
 
 class BaseAPI {
 
@@ -40,8 +41,8 @@ class BaseAPI {
     if (response && response.status) {
       if (200 <= response.status && response.status < 300) {
         return Promise.resolve(response);
-      } else if (response.status === 401 && alt.stores.ApplicationStore.isAuthenticated()) {
-        // disconnect 
+      } else if (response.status === 401 && SessionHelper.hasSessionActive()) {
+        ReduxHack.deleteAllLocalSession();
       }
     }
     return Promise.reject(response);

@@ -1,4 +1,5 @@
 import store from 'flux/redux';
+import Immutable from 'immutable';
 
 export default class SessionHelper {
   static hasSessionActive() {
@@ -7,7 +8,7 @@ export default class SessionHelper {
 
   static getHeaderAuthorization() {
     const session = store.getState().session.first();
-    if (!session) {
+    if (!session || !Immutable.Map.isMap(session)) {
       return null;
     }
     return `Bearer ${session.get('token')}`;

@@ -1,9 +1,12 @@
 import { version } from '../../package.json';
 import React from 'react';
 import ReactNative from 'react-native';
-import store from 'flux/redux';
-import ReduxHack from 'flux/ReduxHack';
 import Immutable from 'immutable';
+
+import store from 'flux/redux';
+// Hack Redux that makes possible to call redux action from chrome debugger
+// We have to keep update this class if we want to access any action
+import ReduxHack from 'flux/ReduxHack';
 
 /** Allow to see network requests in Chrome when debugging **/
 if (__DEV__) {
@@ -24,10 +27,10 @@ const CONFIGS = {
 };
 
 // Global variables
-_window.Redux = store;
 _window.React = React;
-_window.ReactNative = ReactNative;
+_window.Redux = store;
 _window.ReduxHack = ReduxHack;
+_window.ReactNative = ReactNative;
 _window.Immutable = Immutable;
 _window.APP_CONFIG = (__DEV__ && CONFIGS.dev) || CONFIGS.production;
 

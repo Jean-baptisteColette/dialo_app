@@ -3,6 +3,7 @@ import {
 } from 'react';
 
 import {
+  ActivityIndicator,
   StyleSheet,
   Text,
   TextInput,
@@ -12,6 +13,12 @@ import Touchable from 'component/base/touchable';
 
 import Color from 'style/color';
 
+import {
+  SESSION_CREATE,
+} from 'flux/session/type';
+import {
+  LOADING,
+} from 'flux/baseType';
 import {
   bindActionCreators,
 } from 'redux';
@@ -57,9 +64,24 @@ class Auth extends Component {
     this.state = {
       email: '',
       password: '',
+      disabled: false,
     };
     this._signIn = this._signIn.bind(this);
   }
+
+  static getDerivedStateFromProps(props, state) {
+    if (props.status === LOADING) {
+      return {
+        ...state,
+        disabled: true,
+      };
+    }
+    return {
+      ...state,
+      disabled: false,
+    };
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -84,8 +106,13 @@ class Auth extends Component {
         <Touchable
           onPress={this._signIn}
           style={styles.button}
+          disabled={this.state.disabled}
         >
-          <Text style={styles.text}>Connexion</Text>
+          {
+            this.state.disabled
+            && <ActivityIndicator color={'white'}/>
+            || <Text style={styles.text}>Connexion</Text>
+          }
         </Touchable>
       </View>
     );
@@ -101,6 +128,7 @@ class Auth extends Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
+    status: state.session.get(SESSION_CREATE),
   };
 };
 

@@ -33,13 +33,6 @@ if (__DEV__) {
 
 const store = createStore(persistedReducer, compose(applyMiddleware(...middlewares)));
 
-// Hack Redux that makes possible to call redux action from chrome debugger
-// We have to keep update this class if we want to access any action
-import ReduxHack from './ReduxHack';
-const _window = global || window;
-_window.Redux = store;
-_window.ReduxHack = ReduxHack;
-
 export const loadPersistStore = (cb) => {
   return persistStore(store, null, cb);
 };
