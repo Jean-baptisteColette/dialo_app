@@ -122,6 +122,7 @@ class Auth extends Component {
     this.props.createSession({
       email: this.state.email,
       password: this.state.password,
+      from: 'Home',
     });
   }
 }

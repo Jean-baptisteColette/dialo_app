@@ -1,6 +1,5 @@
 import { version } from '../../package.json';
 import React from 'react';
-import ReactNative from 'react-native';
 import Immutable from 'immutable';
 
 import store from 'flux/redux';
@@ -8,14 +7,7 @@ import store from 'flux/redux';
 // We have to keep update this class if we want to access any action
 import ReduxHack from 'flux/ReduxHack';
 
-/** Allow to see network requests in Chrome when debugging **/
-if (__DEV__) {
-  global.XMLHttpRequest = global.originalXMLHttpRequest ?
-    global.originalXMLHttpRequest :
-    global.XMLHttpRequest;
-}
-
-const _window = global || window;
+const _window = window;
 
 const CONFIGS = {
   dev: {
@@ -27,24 +19,17 @@ const CONFIGS = {
 };
 
 // Global variables
+_window.__DEV__ = process.env.NODE_ENV === 'development';
 _window.React = React;
 _window.Redux = store;
 _window.ReduxHack = ReduxHack;
-_window.ReactNative = ReactNative;
 _window.Immutable = Immutable;
-_window.APP_CONFIG = (__DEV__ && CONFIGS.dev) || CONFIGS.production;
-_window.isWeb = false;
+_window.APP_CONFIG = (_window.__DEV__ && CONFIGS.dev) || CONFIGS.production;
+_window.isWeb = true;
 
 _window.APP_CONFIG.VERSION = version;
 
 // Use this for logging response in dev mode
-_window.APP_CONFIG.DEBUG_API = __DEV__;
-
-console.ignoredYellowBox = [
-  'Warning: componentWillMount is deprecated',
-  'Warning: componentWillUpdate is deprecated',
-  'Warning: componentWillReceiveProps is deprecated',
-  'Warning: isMounted(...) is deprecated',
-];
+_window.APP_CONFIG.DEBUG_API = _window.__DEV__;
 
 export default _window.APP_CONFIG;

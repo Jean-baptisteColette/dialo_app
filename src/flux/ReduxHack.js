@@ -10,9 +10,9 @@ import {
   localAllDelete as localAllDeleteSession,
 } from 'flux/session/action';
 
-ReduxHack = { store, dispatch };
+let ReduxHack = { store, dispatch };
 
-actions = bindActionCreators({
+let actions = bindActionCreators({
   // session
   createSession,
   localAllDeleteSession,

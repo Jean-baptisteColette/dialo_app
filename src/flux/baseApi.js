@@ -84,7 +84,7 @@ class BaseAPI {
     params = _.extend({
       method,
       url,
-      baseURL: APP_CONFIG.API_ROOT,
+      baseURL: window.APP_CONFIG.API_ROOT,
       paramsSerializer(params) {
         return Qs.stringify(params, { arrayFormat: 'brackets' });
       },

@@ -14,7 +14,7 @@ import SessionApi from './api';
 
 import NavigationFlux from 'flux/navigation';
 
-export function create({ email, password }) {
+export function create({ email, password, from }) {
   return async function(dispatch, getState) {
     dispatch({
       type: SESSION_CREATE,
@@ -33,7 +33,7 @@ export function create({ email, password }) {
         status: SUCCESS,
         session: response.get('data'),
       });
-      NavigationFlux.navigate('Home');
+      NavigationFlux.navigate(from, 'replace');
     } catch(err) {
       dispatch({
         type: SESSION_CREATE,
@@ -44,11 +44,11 @@ export function create({ email, password }) {
   };
 }
 
-export function localAllDelete() {
+export function localAllDelete(to) {
   return async function(dispatch, getState) {
     dispatch({
       type: CLEAR_ENTITIES,
     });
-    NavigationFlux.navigate('Auth');
+    NavigationFlux.navigate(to || 'Auth', 'replace');
   };
 }

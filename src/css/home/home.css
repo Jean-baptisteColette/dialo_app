@@ -1,0 +1,29 @@
+.root-home-container {
+  display: flex;
+  flex: 1 1 100%;
+  background-color: #FCFCFC;
+  overflow: auto;
+  justify-content: center;
+  align-content: center;
+}
+
+.home-signout-button {
+  margin-top: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  box-shadow: none;
+  background-color: rgb(177, 32, 32);
+  border: 0;
+  border-radius: 2px;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 14px;
+  padding: 15px;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  outline: 0;
+}
+.home-signout-button:hover {
+    opacity: .8;
+}

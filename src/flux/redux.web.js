@@ -1,11 +1,16 @@
-import thunkMiddleware from 'redux-thunk';
+import thunk from 'redux-thunk';
 import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
 import { persistReducer, persistStore } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import immutableTransform from 'redux-persist-transform-immutable';
 
+import { connectRouter, routerMiddleware } from 'connected-react-router';
+import { createBrowserHistory } from 'history';
+
 import session from './session/reducer';
 import user from './user/reducer';
+
+const history = createBrowserHistory();
 
 const reducer = combineReducers({
   session,
@@ -23,20 +28,26 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(persistConfig, reducer);
 
-const middlewares = [thunkMiddleware];
+const middlewares = [thunk, routerMiddleware(history)];
 
-if (__DEV__) {
+if (process.env.NODE_ENV === 'development') {
   const { logger } = require('redux-logger');
 
   middlewares.push(logger);
 }
 
-const store = createStore(persistedReducer, compose(applyMiddleware(...middlewares)));
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+const store = createStore(connectRouter(history)(persistedReducer), composeEnhancers(applyMiddleware(...middlewares)));
 
 export const loadPersistStore = (cb) => {
   return persistStore(store, null, cb);
 };
 
-export const dispatch = store.dispatch;
+const dispatch = store.dispatch;
 
+export {
+  dispatch,
+  history,
+};
 export default store;
