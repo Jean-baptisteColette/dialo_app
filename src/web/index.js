@@ -20,6 +20,7 @@ import Auth from './auth';
 import Home from './home';
 import NotFound from './navigation/notFound';
 
+import Header from './header';
 class App extends Component {
   constructor() {
     super();
@@ -42,12 +43,16 @@ class App extends Component {
       return false;
     }
     return (
+
       <Provider store={store}>
+ 
         <ConnectedRouter history={history}>
           <div>
+          <Header />
             <Switch>
               <PrivateRoute exact path={'/'} component={Home} />
               <Route path={'/auth'} component={Auth} />
+              <Route path={'/header'} component ={Header} />
               <Route component={NotFound} />
             </Switch>
           </div>
