@@ -48,7 +48,7 @@ class App extends Component {
  
         <ConnectedRouter history={history}>
           <div>
-          <Header />
+          <Header/>
             <Switch>
               <PrivateRoute exact path={'/'} component={Home} />
               <Route path={'/auth'} component={Auth} />

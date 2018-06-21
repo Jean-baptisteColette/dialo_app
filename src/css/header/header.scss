@@ -1,6 +1,7 @@
 @import "../../style/color.scss";
-$size-nav-open: 150px;
-$size-nav-close: 45px;
+
+$size-nav-open:175px;
+$size-nav-close: 50px;
 $anim-duration: 0.25s;
 .myNav {
     display: flex;
@@ -8,9 +9,9 @@ $anim-duration: 0.25s;
     width: $size-nav-open;
     height: 100vh;
     background: $color-nav-background;
-    padding: 5px;
     float: left;
     color: $color-nav-text;
+    overflow: hidden;
 }
 
 .myNav.animateClose {
@@ -37,13 +38,13 @@ $anim-duration: 0.25s;
     width: 100px;*/
     animation-name: open;
     animation-duration: $anim-duration;
-    width: 150px;
+    width: $size-nav-open;
 }
 
 @keyframes close {
     0% {
         width: $size-nav-open;
-        color: transparent
+        color: transparent;
     }
     100% {
         width: $size-nav-close;
@@ -54,7 +55,7 @@ $anim-duration: 0.25s;
 @keyframes open {
     0% {
         width: $size-nav-close;
-        color: transparent
+        color: transparent;
     }
     100% {
         width: $size-nav-open;
@@ -62,8 +63,65 @@ $anim-duration: 0.25s;
     }
 }
 
-.profil-container {
+@keyframes displayAppName {
+    0% {
+        color: transparent;
+    }
+    100% {
+        color: $color-nav-text
+    }
+}
+@keyframes displaySeparator {
+    0% {
+        background : transparent;
+    }
+    100% {
+        background : $color-nav-text
+    }
+}
+.labelNav {
+    display: flex;
+    align-items: center;
+    margin-left: 7px;
+    height: 20px;
+    overflow: hidden;
+}
+
+.labelNavContent {
+    font-size: 0.7em;
+    height:10px;
+}
+.navSeparator{
+color: transparent;
+background: $color-nav-text;
+width: 100%;
+height: 2px;
+margin-bottom: 9px;
+margin-top:9px;
+animation-name: displaySeparator;
+animation-duration: 1s;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 100px;
+    overflow: hidden;
+    color: $color-nav-text !important;
+    flex-direction: column;
+}
+
+.AppName {
+    margin-top: 15px;
+    animation-name: displayAppName;
+    animation-duration: 2s;
+    color: $color-nav-text;
+}
+
+.logoApp {
+    font-size: 2em;
+    color: inherit;
 }
 
 .itemNav {
@@ -93,34 +151,83 @@ $anim-duration: 0.25s;
     margin-left: 5px;
     font-size: 35px;
     color: $color-nav-text;
+    margin-top: 4px;
 }
 
 .header-nav {
     width: 100%;
-    height: 50x;
-    border: 1px solid $color-nav-text;
+    height: 45px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3), 0 0 10px rgba(0, 0, 0, 0.1) inset;
+    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3), 0 0 10px rgba(0, 0, 0, 0.1) inset;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3), 0 0 10px rgba(0, 0, 0, 0.1) inset;
 }
 
 .iconMenu {
     font-size: 2em;
-    color: $color-nav-text !important
+    color: inherit;
+    float: left;
+    margin-left: 12px;
 }
 
 .item-container {
-    display: flex;
-    height: 35px;
-    justify-content: space-between;
+    height: 40px;
     cursor: pointer;
-    margin-bottom: 14px;
+    margin-bottom: 3px;
+    overflow: hidden;
+    padding-top: 7px;
+}
+.item-container:hover{
+background: $color-nav-active;
 }
 
 .linkMenu {
-    text-align: end;
-    color: $color-nav-text;
+    color: #76878E;
     text-decoration: none;
     line-height: 35px;
 }
 
+.linkMenuName {
+    color: inherit;
+    text-decoration: none;
+    line-height: 35px;
+    float: left;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    margin-left: 10px;
+    font-size: 0.9em;
+}
+
 .angleRight {
-    padding-top: 12px;
+    padding-top: 8px;
+    align-self: auto;
+    float: right;
+    margin-right: 8px;
+    font-size: 1em;
+}
+
+.active {
+    background-color: $color-nav-active;
+    color: $color-nav-text-active;
+}
+
+.profil {
+    width: 200px;
+    height: 45px;
+    float: right;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: $color-nav-text;
+}
+
+.userName {
+    margin-left: 10px;
+}
+
+.userAvatar {
+    margin-right: 10px;
+    font-size: 35px;
+}
+.userAvatar:hover{
+    color: $color-nav-text-active; 
 }

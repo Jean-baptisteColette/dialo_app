@@ -1,12 +1,12 @@
 .myNav {
   display: flex;
   flex-direction: column;
-  width: 150px;
+  width: 175px;
   height: 100vh;
   background: #273238;
-  padding: 5px;
   float: left;
-  color: #76878E; }
+  color: #76878E;
+  overflow: hidden; }
 
 .myNav.animateClose {
   /*
@@ -19,7 +19,7 @@
     width: 50px;*/
   animation-name: close;
   animation-duration: 0.25s;
-  width: 45px; }
+  width: 50px; }
 
 .myNav.animateOpen {
   /* -webkit-transition: all .2s ease-in-out;
@@ -31,26 +31,75 @@
     width: 100px;*/
   animation-name: open;
   animation-duration: 0.25s;
-  width: 150px; }
+  width: 175px; }
 
 @keyframes close {
   0% {
-    width: 150px;
+    width: 175px;
     color: transparent; }
   100% {
-    width: 45px;
+    width: 50px;
     color: #76878E; } }
 
 @keyframes open {
   0% {
-    width: 45px;
+    width: 50px;
     color: transparent; }
   100% {
-    width: 150px;
+    width: 175px;
     color: #76878E; } }
 
-.profil-container {
-  height: 100px; }
+@keyframes displayAppName {
+  0% {
+    color: transparent; }
+  100% {
+    color: #76878E; } }
+
+@keyframes displaySeparator {
+  0% {
+    background: transparent; }
+  100% {
+    background: #76878E; } }
+
+.labelNav {
+  display: flex;
+  align-items: center;
+  margin-left: 7px;
+  height: 20px;
+  overflow: hidden; }
+
+.labelNavContent {
+  font-size: 0.7em;
+  height: 10px; }
+
+.navSeparator {
+  color: transparent;
+  background: #76878E;
+  width: 100%;
+  height: 2px;
+  margin-bottom: 9px;
+  margin-top: 9px;
+  animation-name: displaySeparator;
+  animation-duration: 1s; }
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  overflow: hidden;
+  color: #76878E !important;
+  flex-direction: column; }
+
+.AppName {
+  margin-top: 15px;
+  animation-name: displayAppName;
+  animation-duration: 2s;
+  color: #76878E; }
+
+.logoApp {
+  font-size: 2em;
+  color: inherit; }
 
 .itemNav {
   width: 100%;
@@ -74,29 +123,73 @@
   cursor: pointer;
   margin-left: 5px;
   font-size: 35px;
-  color: #76878E; }
+  color: #76878E;
+  margin-top: 4px; }
 
 .header-nav {
   width: 100%;
-  height: 50x;
-  border: 1px solid #76878E; }
+  height: 45px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3), 0 0 10px rgba(0, 0, 0, 0.1) inset;
+  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3), 0 0 10px rgba(0, 0, 0, 0.1) inset;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3), 0 0 10px rgba(0, 0, 0, 0.1) inset; }
 
 .iconMenu {
   font-size: 2em;
-  color: #76878E !important; }
+  color: inherit;
+  float: left;
+  margin-left: 12px; }
 
 .item-container {
-  display: flex;
-  height: 35px;
-  justify-content: space-between;
+  height: 40px;
   cursor: pointer;
-  margin-bottom: 14px; }
+  margin-bottom: 3px;
+  overflow: hidden;
+  padding-top: 7px; }
+
+.item-container:hover {
+  background: #36474F; }
 
 .linkMenu {
-  text-align: end;
   color: #76878E;
   text-decoration: none;
   line-height: 35px; }
 
+.linkMenuName {
+  color: inherit;
+  text-decoration: none;
+  line-height: 35px;
+  float: left;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  margin-left: 10px;
+  font-size: 0.9em; }
+
 .angleRight {
-  padding-top: 12px; }
+  padding-top: 8px;
+  align-self: auto;
+  float: right;
+  margin-right: 8px;
+  font-size: 1em; }
+
+.active {
+  background-color: #36474F;
+  color: #F0F0F0; }
+
+.profil {
+  width: 200px;
+  height: 45px;
+  float: right;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #76878E; }
+
+.userName {
+  margin-left: 10px; }
+
+.userAvatar {
+  margin-right: 10px;
+  font-size: 35px; }
+
+.userAvatar:hover {
+  color: #F0F0F0; }

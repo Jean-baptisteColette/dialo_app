@@ -6,30 +6,27 @@ import {
 } from 'react-redux';
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee, faAngleRight } from '@fortawesome/free-solid-svg-icons'
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons'
 class Item extends Component {
 
-    toggle() {
-        this.setState({ toggle: !this.state.toggle })
-    }
     render() {
-        if (this.props.Toggle !== undefined && this.props.Name !== undefined) {
+        const AngleRight = () =>{
+            if (this.props.Active === false){
+                return   <FontAwesomeIcon icon={faAngleRight} size="xs" className='angleRight' />
+            }
+            return false;
+        }
+        if (this.props.Icon !== undefined && this.props.Toggle !== undefined && this.props.Name !== undefined && this.props.Active !== undefined &&  this.props.To !== undefined) {
             return (
-
-
-                <Link className="item-container linkMenu" to="/header">
-                <FontAwesomeIcon icon={faCoffee} size="lg" className="iconMenu" />
-                 <span className={this.props.Toggle === false ? 'linkMenu hide' : 'linkMenu'}> Header </span>
-                 <FontAwesomeIcon icon={faAngleRight} size="xs" className={this.props.Toggle === false ? ' angleRight hide' : 'angleRight'} />
-                 </Link>
-
-
+                <Link className={ this.props.Active === true ? "item-container linkMenu active" : "item-container linkMenu "} to={this.props.To}>
+                   <FontAwesomeIcon icon={this.props.Icon} size="lg" className="iconMenu" />
+                    <p className={'linkMenuName'}>{this.props.Name} </p>
+                  <AngleRight />
+                </Link>
             )
         }
         else
             return false;
     }
 }
-//                <FontAwesomeIcon icon={faAngleRight} size="lg" className="iconMenu" />
-//<a className="itemNav"><FontAwesomeIcon icon={faCoffee} size="lg" className="iconMenu" /><span className={this.props.Toggle === false ? 'itemName hide' : 'itemName'}>{this.props.Name}</span></a>
 export default connect()(Item);
