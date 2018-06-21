@@ -1,23 +1,15 @@
+.myNav {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  height: 100vh;
+  background: #273238;
+  padding: 5px;
+  float: left;
+  color: #76878E; }
 
-
-@keyframes example {
-    0%   {width: 100px;}
-
-    100% {width: 50px;}
-}
-
-.myNav{
-    display: flex;
-    flex-direction: column;
-    width: 100px;
-    height: 100vh;
-    background: blue;
-    padding: 5px;
-    float: left;
-}
-
-.myNav.animateClose{
-    /*
+.myNav.animateClose {
+  /*
     -webkit-transition: all .2s ease-in-out;
     -moz-transition: all .2s ease-in-out;
     -ms-transition: all .2s ease-in-out;
@@ -25,63 +17,86 @@
     transition: all .2s ease-in-out;
 
     width: 50px;*/
-    animation-name: close;
-    animation-duration: 0.25s;
-width: 50px;
-}
+  animation-name: close;
+  animation-duration: 0.25s;
+  width: 45px; }
 
-.myNav.animateOpen{
-   /* -webkit-transition: all .2s ease-in-out;
+.myNav.animateOpen {
+  /* -webkit-transition: all .2s ease-in-out;
     -moz-transition: all .2s ease-in-out;
     -ms-transition: all .2s ease-in-out;
     -o-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
 
     width: 100px;*/
-    animation-name: open;
-    animation-duration: 0.25s;
-width: 100px;
-
-}
+  animation-name: open;
+  animation-duration: 0.25s;
+  width: 150px; }
 
 @keyframes close {
-    0%   {width: 100px; color: transparent;}
-
-    100% {width: 50px; color: black;}
-}
+  0% {
+    width: 150px;
+    color: transparent; }
+  100% {
+    width: 45px;
+    color: #76878E; } }
 
 @keyframes open {
-    0%   {width: 50px; color: transparent}
+  0% {
+    width: 45px;
+    color: transparent; }
+  100% {
+    width: 150px;
+    color: #76878E; } }
 
-    100% {width: 100px; color : black}
-}
+.profil-container {
+  height: 100px; }
 
+.itemNav {
+  width: 100%;
+  height: 30px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  cursor: pointer; }
 
+.button {
+  float: left; }
 
-.itemNav{
-    width: 100%;
-    height: 30px;
-    background: red;
-    margin-bottom: 5px;
-    margin-top: 5px;
+.hide {
+  display: none;
+  color: transparent; }
 
-}
-.button{
-    float: left;
-}
-.icon{
-    width: 50px;
-    height: 30px;
-    background: black;
-}
+.itemName {
+  line-height: 30px;
+  padding-left: 10px; }
 
-.hide{
-    display: none;
-    color: transparent;
-}
+.toggleMenu {
+  cursor: pointer;
+  margin-left: 5px;
+  font-size: 35px;
+  color: #76878E; }
 
+.header-nav {
+  width: 100%;
+  height: 50x;
+  border: 1px solid #76878E; }
 
-.itemName, .icon{
-    line-height: 30px;
-}
+.iconMenu {
+  font-size: 2em;
+  color: #76878E !important; }
 
+.item-container {
+  display: flex;
+  height: 35px;
+  justify-content: space-between;
+  cursor: pointer;
+  margin-bottom: 14px; }
+
+.linkMenu {
+  text-align: end;
+  color: #76878E;
+  text-decoration: none;
+  line-height: 35px; }
+
+.angleRight {
+  padding-top: 12px; }
