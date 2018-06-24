@@ -19,8 +19,9 @@ class Header extends Component {
             route: {
                 auth: ["/auth", "Connexion"],
                 tutu: ["/tutu", "Documents"],
-                toto: ["/toto", "S'inscrire"],
-                tete: ["/tete", "Tete"]
+                toto: ["/register", "S'inscrire"],
+                tete: ["/tete", "Tete"],
+                member: ["/member", "Membre"]
             }
 
         }
@@ -51,7 +52,7 @@ class Header extends Component {
 
                 <Item Icon={faFile} To={this.state.route.tutu[0]} Toggle={this.state.toggle} Name={this.state.route.tutu[1]} Active={this.state.route.tutu[0] === this.props.position ? true : false} />
                 <Item Icon={faBook} To={this.state.route.tete[0]} Toggle={this.state.toggle} Name={this.state.route.tete[1]} Active={this.state.route.tete[0] === this.props.position ? true : false} />
-                <Item Icon={faBook} To={"/auth"} Toggle={this.state.toggle} Name={"item n°1"} Active={false} />
+                <Item Icon={faBook} To={this.state.route.member[0]} Toggle={this.state.toggle} Name={this.state.route.member[1]} Active={false} />
                 <Item Icon={faBook} To={"/auth"} Toggle={this.state.toggle} Name={"item n°2"} Active={false} />
                 <Item Icon={faBook} To={"/auth"} Toggle={this.state.toggle} Name={"item n°3"} Active={false} />
                 <Item Icon={faBook} To={"/auth"} Toggle={this.state.toggle} Name={"item n°4"} Active={false} />

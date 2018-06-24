@@ -17,10 +17,12 @@ import {
 } from 'flux/baseType';
 
 import Auth from './auth';
+import Register from './register';
 import Home from './home';
 import NotFound from './navigation/notFound';
 
 import Header from './header';
+import Member from './member';
 class App extends Component {
   constructor() {
     super();
@@ -53,6 +55,8 @@ class App extends Component {
               <PrivateRoute exact path={'/'} component={Home} />
               <Route path={'/auth'} component={Auth} />
               <Route path={'/header'} component ={Header} />
+              <Route path={'/member'} component ={Member} />
+              <Route path={'/register'} component ={Register} />
               <Route component={NotFound} />
             </Switch>
           </div>
