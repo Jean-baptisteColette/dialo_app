@@ -26,10 +26,10 @@ class Header extends Component {
             }
 
         }
-        this.toggle = this.toggle.bind(this);
+        this._toggle = this._toggle.bind(this);
     }
 
-    toggle() {
+    _toggle() {
         this.setState({ toggle: !this.state.toggle });
     }
 
@@ -58,7 +58,7 @@ class Header extends Component {
 
             </nav>
             <div className="header-nav">
-                <div className=" toggleMenu" onClick={this.toggle} >
+                <div className=" toggleMenu" onClick={this._toggle} >
                     <Icon icon={Bars} name={"bars"} size={35} />
                 </div>
                 <Profil />

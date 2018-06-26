@@ -22,7 +22,6 @@ import Home from './home';
 import NotFound from './navigation/notFound';
 
 import Header from './header';
-import Member from './member';
 class App extends Component {
   constructor() {
     super();
@@ -54,7 +53,6 @@ class App extends Component {
             <Switch>
               <PrivateRoute exact path={'/'} component={Home} />
               <Route path={'/auth'} component={Auth} />
-              <Route path={'/header'} component ={Header} />
               <Route path={'/register'} component ={Register} />
               <Route component={NotFound} />
             </Switch>
