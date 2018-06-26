@@ -110,6 +110,7 @@ animation-duration: 1s;
     overflow: hidden;
     color: $color-nav-text !important;
     flex-direction: column;
+    fill: $color-nav-text;
 }
 
 .AppName {
@@ -151,7 +152,8 @@ animation-duration: 1s;
     margin-left: 5px;
     font-size: 35px;
     color: $color-nav-text;
-    margin-top: 4px;
+    float: left;
+    padding-top: 2px;
 }
 
 .header-nav {
@@ -166,7 +168,8 @@ animation-duration: 1s;
     font-size: 2em;
     color: inherit;
     float: left;
-    margin-left: 12px;
+    margin-left: 7px;
+    fill: inherit;
 }
 
 .item-container {
@@ -175,6 +178,7 @@ animation-duration: 1s;
     margin-bottom: 3px;
     overflow: hidden;
     padding-top: 7px;
+    fill : $color-nav-text;;
 }
 .item-container:hover{
 background: $color-nav-active;
@@ -198,7 +202,7 @@ background: $color-nav-active;
 }
 
 .angleRight {
-    padding-top: 8px;
+    padding-top: 5px;
     align-self: auto;
     float: right;
     margin-right: 8px;
@@ -208,6 +212,7 @@ background: $color-nav-active;
 .active {
     background-color: $color-nav-active;
     color: $color-nav-text-active;
+    fill : $color-nav-text-active;
 }
 
 .profil {
@@ -229,5 +234,5 @@ background: $color-nav-active;
     font-size: 35px;
 }
 .userAvatar:hover{
-    color: $color-nav-text-active; 
+    fill: $color-nav-text-active; 
 }

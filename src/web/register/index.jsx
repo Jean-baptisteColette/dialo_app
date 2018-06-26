@@ -4,51 +4,48 @@ import React, {
 import {
     connect,
 } from 'react-redux';
-
+import { Link } from 'react-router-dom'
 
 class Register extends Component {
     render() {
-        return (<div class="container">
+        return (<div className="container">
 
             <form>
-                <ul class="flex-outer">
-                    <li><h2> Inscription </h2></li>
+                <ul className="flex-outer">
+                    <div className="register-header-container">
+
+                        <Link className="register-header-button  disabled" to={"/auth"}>CONNEXION</Link>
+                        <Link className="register-header-button" to={"/register"}>INSCRIPTION</Link>
+                    </div>
+                    <li><h2> Inscription</h2></li>
                     <li><div className="separator"></div></li>
                     <li>
-                        <label for="first-name">Prénom</label>
+                        <label >Prénom</label>
                         <input type="text" id="first-name" placeholder="Prénom" />
                     </li>
                     <li>
-                        <label for="last-name">Nom</label>
+                        <label >Nom</label>
                         <input type="text" id="last-name" placeholder="Nom" />
                     </li>
                     <li>
-                        <label for="email">E-mail</label>
+                        <label>E-mail</label>
                         <input type="email" id="email" placeholder="Email" />
                     </li>
                     <li>
-                        <label for="password">Mot de passe</label>
+                        <label >Mot de passe</label>
                         <input type="password" id="password" placeholder="Mot de passe" />
                     </li>
                     <li>
-                        <label for="password">Mot de passe</label>
+                        <label >Mot de passe</label>
                         <input type="password" id="passwordConf" placeholder="Mot de passe (confirmation)" />
                     </li>
                     <li>
                         <p>CGU</p>
-                        <ul class="flex-inner">
-                            <li>
+                        <ul className="flex-inner">
 
-                            </li>
-                            <li>
-
-                            </li>
-                            <li>
-
-                            </li>
                             <li>
                                 <input type="checkbox" id="twenty-to-twentynine" />
-                                <label for="twenty-to-twentynine"></label>
+                                <label ></label>
                             </li>
                         </ul>
                     </li>

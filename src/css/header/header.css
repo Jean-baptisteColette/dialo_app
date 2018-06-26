@@ -89,7 +89,8 @@
   height: 100px;
   overflow: hidden;
   color: #76878E !important;
-  flex-direction: column; }
+  flex-direction: column;
+  fill: #76878E; }
 
 .AppName {
   margin-top: 15px;
@@ -124,7 +125,8 @@
   margin-left: 5px;
   font-size: 35px;
   color: #76878E;
-  margin-top: 4px; }
+  float: left;
+  padding-top: 2px; }
 
 .header-nav {
   width: 100%;
@@ -137,14 +139,16 @@
   font-size: 2em;
   color: inherit;
   float: left;
-  margin-left: 12px; }
+  margin-left: 7px;
+  fill: inherit; }
 
 .item-container {
   height: 40px;
   cursor: pointer;
   margin-bottom: 3px;
   overflow: hidden;
-  padding-top: 7px; }
+  padding-top: 7px;
+  fill: #76878E; }
 
 .item-container:hover {
   background: #36474F; }
@@ -165,7 +169,7 @@
   font-size: 0.9em; }
 
 .angleRight {
-  padding-top: 8px;
+  padding-top: 5px;
   align-self: auto;
   float: right;
   margin-right: 8px;
@@ -173,7 +177,8 @@
 
 .active {
   background-color: #36474F;
-  color: #F0F0F0; }
+  color: #F0F0F0;
+  fill: #F0F0F0; }
 
 .profil {
   width: 200px;
@@ -192,4 +197,4 @@
   font-size: 35px; }
 
 .userAvatar:hover {
-  color: #F0F0F0; }
+  fill: #F0F0F0; }
