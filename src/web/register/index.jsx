@@ -8,12 +8,11 @@ import { Link } from 'react-router-dom'
 
 class Register extends Component {
     render() {
-        return (<div className="container">
-
+        return (
+        <div className="container">
             <form>
                 <ul className="flex-outer">
                     <div className="register-header-container">
-
                         <Link className="register-header-button  disabled" to={"/auth"}>CONNEXION</Link>
                         <Link className="register-header-button" to={"/register"}>INSCRIPTION</Link>
                     </div>
@@ -54,7 +53,8 @@ class Register extends Component {
                     </li>
                 </ul>
             </form>
-        </div>);
+        </div>
+        );
     }
 }
 

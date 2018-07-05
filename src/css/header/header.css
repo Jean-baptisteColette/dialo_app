@@ -9,26 +9,11 @@
   overflow: hidden; }
 
 .myNav.animateClose {
-  /*
-    -webkit-transition: all .2s ease-in-out;
-    -moz-transition: all .2s ease-in-out;
-    -ms-transition: all .2s ease-in-out;
-    -o-transition: all .2s ease-in-out;
-    transition: all .2s ease-in-out;
-
-    width: 50px;*/
   animation-name: close;
   animation-duration: 0.25s;
   width: 50px; }
 
 .myNav.animateOpen {
-  /* -webkit-transition: all .2s ease-in-out;
-    -moz-transition: all .2s ease-in-out;
-    -ms-transition: all .2s ease-in-out;
-    -o-transition: all .2s ease-in-out;
-    transition: all .2s ease-in-out;
-
-    width: 100px;*/
   animation-name: open;
   animation-duration: 0.25s;
   width: 175px; }

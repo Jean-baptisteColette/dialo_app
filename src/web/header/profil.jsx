@@ -11,10 +11,11 @@ import UserCircle from "../../image/user-circle.svg";
 
 class Profil extends Component {
     render() {
-       return (<div className="profil"> <p className="userName">François Bêche</p> 
-
+       return (
+       <div className="profil"> <p className="userName">François Bêche</p> 
        <Icon icon={UserCircle} name="user-circle" size={35} />
-       </div>) 
+       </div>
+       ) 
     }
 }
 export default connect()(Profil);

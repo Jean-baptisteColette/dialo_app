@@ -4,13 +4,13 @@ import React, {
 import {
     connect,
 } from 'react-redux';
-import Item from '../header/item'
+import Item from './item.jsx'
 
 import Profil from './profil';
 
-import Leaf from "../../image/leaf.svg";
-import File from "../../image/file.svg";
-import Bars from "../../image/bars.svg";
+import Leaf from "image/leaf.svg";
+import File from "image/file.svg";
+import Bars from "image/bars.svg";
 import Icon from "../sharedComponent/Icon"
 class Header extends Component {
 
@@ -20,9 +20,9 @@ class Header extends Component {
             toggle: true,
             route: {
                 auth: ["/auth", "Connexion"],
-                tutu: ["/tutu", "Documents"],
+                tutu: ["/documents", "Documents"],
                 toto: ["/register", "S'inscrire"],
-                tete: ["/tete", "Tete"],
+                //tete: ["/tete", "Tete"],
             }
 
         }
@@ -34,7 +34,8 @@ class Header extends Component {
     }
 
     render() {
-        return (<div >
+        return (
+        <div >
             <nav className={this.state.toggle === false ? "myNav animateClose" : "myNav animateOpen"} id="myNav">
                 <div className="logo-container ">
                     <Icon icon={Leaf} name="leaf" size={35}/>
@@ -43,19 +44,12 @@ class Header extends Component {
                 {this.state.toggle === true ? <div className="labelNav">
                     <div className="labelNavContent">Navigation </div>
                 </div> : <div className="navSeparator">Navigation </div>}
-
-                <Item Icon={File} IconName="file" To={this.state.route.tutu[0]} Toggle={this.state.toggle} Name={this.state.route.tutu[1]} Active={this.state.route.tutu[0] === this.props.position ? true : false} />
-                <Item Icon={File} IconName="file" To={this.state.route.tete[0]} Toggle={this.state.toggle} Name={this.state.route.tete[1]} Active={this.state.route.tete[0] === this.props.position ? true : false} />
-                <Item Icon={File} IconName="file" To={"/auth"} Toggle={this.state.toggle} Name={"item n°2"} Active={false} />
-                <Item Icon={File} IconName="file" To={"/auth"} Toggle={this.state.toggle} Name={"item n°3"} Active={false} />
-                <Item Icon={File} IconName="file" To={"/auth"} Toggle={this.state.toggle} Name={"item n°4"} Active={false} />
+                <Item icon={File} iconName="file" to={this.state.route.tutu[0]} toggle={this.state.toggle} name={this.state.route.tutu[1]} active={this.state.route.tutu[0] === this.props.position ? true : false} />
                 {this.state.toggle === true ? <div className="labelNav">
                     <div className="labelNavContent">Espace Perso </div>
                 </div> : <div className="navSeparator">Espace Perso </div>}
-                <Item Icon={File} IconName="file" To={this.state.route.auth[0]} Toggle={this.state.toggle} Name={this.state.route.auth[1]} Active={this.state.route.auth[0] === this.props.position ? true : false} />
-                <Item Icon={File} IconName="file" To={this.state.route.toto[0]} Toggle={this.state.toggle} Name={this.state.route.toto[1]} Active={this.state.route.toto[0] === this.props.position ? true : false} />
-
-
+                <Item icon={File} iconName="file" to={this.state.route.auth[0]} toggle={this.state.toggle} name={this.state.route.auth[1]} active={this.state.route.auth[0] === this.props.position ? true : false} />
+                <Item icon={File} iconName="file" to={this.state.route.toto[0]} toggle={this.state.toggle} name={this.state.route.toto[1]} active={this.state.route.toto[0] === this.props.position ? true : false} />
             </nav>
             <div className="header-nav">
                 <div className=" toggleMenu" onClick={this._toggle} >
@@ -64,7 +58,8 @@ class Header extends Component {
                 <Profil />
             </div>
 
-        </div>)
+        </div>
+        )
     }
 
 }

@@ -12,18 +12,18 @@ import AngleRightIcon from "../../image/angle-right.svg";
 class Item extends Component {
     render() {
         const AngleRight = () => {
-            if (this.props.Active === false) {
+            if (this.props.active === false) {
                 return <div className="angleRight" ><Icon icon={AngleRightIcon} name={"angle-right"} size={20} cssColor={'iconColor '} /></div>
             }
             return false;
         }
-        if (this.props.IconName !== undefined && this.props.Icon !== undefined && this.props.Toggle !== undefined && this.props.Name !== undefined && this.props.Active !== undefined && this.props.To !== undefined) {
+        if (this.props.iconName !== undefined && this.props.icon !== undefined && this.props.toggle !== undefined && this.props.name !== undefined && this.props.active !== undefined && this.props.to !== undefined) {
             return (
-                <Link className={this.props.Active === true ? "item-container linkMenu active" : "item-container linkMenu "} to={this.props.To}>
+                <Link className={this.props.active === true ? "item-container linkMenu active" : "item-container linkMenu "} to={this.props.to}>
                     <div className='iconMenu'>
-                        <Icon icon={this.props.Icon} name={this.props.IconName} size={35}/>
+                        <Icon icon={this.props.icon} name={this.props.iconName} size={35}/>
                     </div>
-                    <p className={'linkMenuName'}>{this.props.Name} </p>
+                    <p className={'linkMenuName'}>{this.props.name} </p>
                     <AngleRight />
                 </Link>
             )

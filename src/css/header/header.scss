@@ -3,6 +3,7 @@
 $size-nav-open:175px;
 $size-nav-close: 50px;
 $anim-duration: 0.25s;
+
 .myNav {
     display: flex;
     flex-direction: column;
@@ -15,27 +16,12 @@ $anim-duration: 0.25s;
 }
 
 .myNav.animateClose {
-    /*
-    -webkit-transition: all .2s ease-in-out;
-    -moz-transition: all .2s ease-in-out;
-    -ms-transition: all .2s ease-in-out;
-    -o-transition: all .2s ease-in-out;
-    transition: all .2s ease-in-out;
-
-    width: 50px;*/
     animation-name: close;
     animation-duration: $anim-duration;
     width: $size-nav-close;
 }
 
 .myNav.animateOpen {
-    /* -webkit-transition: all .2s ease-in-out;
-    -moz-transition: all .2s ease-in-out;
-    -ms-transition: all .2s ease-in-out;
-    -o-transition: all .2s ease-in-out;
-    transition: all .2s ease-in-out;
-
-    width: 100px;*/
     animation-name: open;
     animation-duration: $anim-duration;
     width: $size-nav-open;
@@ -71,6 +57,7 @@ $anim-duration: 0.25s;
         color: $color-nav-text
     }
 }
+
 @keyframes displaySeparator {
     0% {
         background : transparent;
@@ -79,6 +66,7 @@ $anim-duration: 0.25s;
         background : $color-nav-text
     }
 }
+
 .labelNav {
     display: flex;
     align-items: center;
@@ -91,6 +79,7 @@ $anim-duration: 0.25s;
     font-size: 0.7em;
     height:10px;
 }
+
 .navSeparator{
 color: transparent;
 background: $color-nav-text;
