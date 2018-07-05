@@ -1,5 +1,4 @@
-import React, { Component, } from 'react';
-import { connect, } from 'react-redux';
+import React from 'react';
 
 /**
  * Icon compone is shared component relative to the entier web application
@@ -7,13 +6,16 @@ import { connect, } from 'react-redux';
  * name => name of icon (check svg)
  */
 
-class Icon extends Component {
-    render() {
-        return (
-            <svg  width={this.props.size} height={this.props.size}>
-                <use xlinkHref={`${this.props.icon}#icon-${this.props.name}`} />
-            </svg>
-        );
-    }
-}
-export default connect()(Icon);
+const Icon = (props) => {
+    return (
+        <svg width={props.size} height={props.size}>
+            <use xlinkHref={`${props.icon}#icon-${props.name}`} />
+        </svg>
+    ); 
+};
+
+Icon.protoTypes = {
+
+};
+
+export default Icon;
