@@ -1,4 +1,4 @@
-import store from 'flux/redux';
+import store from '../flux/redux';
 import Immutable from 'immutable';
 
 export default class SessionHelper {

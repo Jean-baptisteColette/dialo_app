@@ -8,7 +8,7 @@ import store, {
 import {
   create as createSession,
   localAllDelete as localAllDeleteSession,
-} from 'flux/session/action';
+} from './session/action';
 
 let ReduxHack = { store, dispatch };
 

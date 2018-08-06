@@ -1,4 +1,4 @@
-import BaseEntityReducer from 'flux/baseEntityReducer';
+import BaseEntityReducer from '../baseEntityReducer';
 
 export default BaseEntityReducer.createEntitiesReducer({
   entityName: 'user',

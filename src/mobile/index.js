@@ -1,6 +1,6 @@
 import './config';
-import store, { loadPersistStore } from 'flux/redux';
-import NavigationFlux from 'flux/navigation';
+import store, { loadPersistStore } from '../flux/redux';
+import NavigationFlux from '../flux/navigation';
 
 import {
   Component,

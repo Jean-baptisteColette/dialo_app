@@ -1,4 +1,4 @@
-import BaseApi from 'flux/baseApi';
+import BaseApi from '../baseApi';
 
 class SessionApi extends BaseApi {
   static create({ email, password }) {

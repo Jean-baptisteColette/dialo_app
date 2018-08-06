@@ -17,11 +17,11 @@ import {
 } from 'react-redux';
 import {
   localAllDelete,
-} from 'flux/session/action';
+} from '../../flux/session/action';
 
-import Touchable from 'component/base/touchable';
+import Touchable from '../base/touchable';
 
-import Color from 'style/color';
+import Color from '../../style/color';
 
 const styles = StyleSheet.create({
   container: {

@@ -8,11 +8,11 @@ import {
   LOADING,
   SUCCESS,
   FAILURE,
-} from 'flux/baseType';
+} from '..//baseType';
 
 import SessionApi from './api';
 
-import NavigationFlux from 'flux/navigation';
+import NavigationFlux from '../navigation';
 
 export function create({ email, password, from }) {
   return async function(dispatch, getState) {

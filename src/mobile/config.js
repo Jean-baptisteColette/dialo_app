@@ -3,10 +3,10 @@ import React from 'react';
 import ReactNative from 'react-native';
 import Immutable from 'immutable';
 
-import store from 'flux/redux';
+import store from '../flux/redux';
 // Hack Redux that makes possible to call redux action from chrome debugger
 // We have to keep update this class if we want to access any action
-import ReduxHack from 'flux/ReduxHack';
+import ReduxHack from '../flux/ReduxHack';
 
 /** Allow to see network requests in Chrome when debugging **/
 if (__DEV__) {

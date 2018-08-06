@@ -1,8 +1,8 @@
-import BaseEntityReducer from 'flux/baseEntityReducer';
+import BaseEntityReducer from '../baseEntityReducer';
 
 import {
   SESSION_CREATE,
-} from 'flux/session/type';
+} from './type';
 
 export default BaseEntityReducer.createEntitiesReducer({
   entityName: 'session',

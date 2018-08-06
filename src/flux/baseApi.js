@@ -2,7 +2,7 @@ import _ from 'underscore';
 import Qs from 'qs';
 import axios from 'axios';
 
-import SessionHelper from 'helpers/session';
+import SessionHelper from '../helpers/session';
 
 import { fromJS } from 'immutable';
 import ReduxHack from './ReduxHack';

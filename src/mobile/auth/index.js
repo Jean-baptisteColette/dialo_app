@@ -9,16 +9,16 @@ import {
   TextInput,
   View,
 } from 'react-native';
-import Touchable from 'component/base/touchable';
+import Touchable from '../base/touchable';
 
-import Color from 'style/color';
+import Color from '../../style/color';
 
 import {
   SESSION_CREATE,
-} from 'flux/session/type';
+} from '../../flux/session/type';
 import {
   LOADING,
-} from 'flux/baseType';
+} from '../../flux/baseType';
 import {
   bindActionCreators,
 } from 'redux';
@@ -27,7 +27,7 @@ import {
 } from 'react-redux';
 import {
   create as createSession,
-} from 'flux/session/action';
+} from '../../flux/session/action';
 
 const styles = StyleSheet.create({
   container: {
